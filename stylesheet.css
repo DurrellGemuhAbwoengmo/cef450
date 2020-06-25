@@ -1,0 +1,9 @@
+body{
+	background-color:#CAE6EB;
+}
+.header
+{
+	display: block;
+	color: orangered;
+	text-align: center;
+}
