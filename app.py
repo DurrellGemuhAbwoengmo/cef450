@@ -11,10 +11,9 @@ p = myprocessor.MyProcessor()
 
 class app(object):
     @cherrypy.expose
-    def GET(self):
-        return cherrypy.session['mystring']
+    
     def index(self):
-        data = {"num1": [1, 2, 3, 42, 5, 5, 15, 1, 25, 68, 100], }
+        data = {"num1": [1, 2, 3, 42, 5, 5, 15, 1, 25, 68, 100] }
         df = pd.DataFrame(data)
         a = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
         output = p.run(df)
@@ -175,12 +174,20 @@ class app(object):
 		<a href="../question2.html" ><button type="button" >Solution</button> </a>
     </ol>
     <hr>
-  <div class="foot"><h6>Copy right</h6> <h6>&copy;</h6> <h6>property of Durrell Gemuh</h6></div>
+  
 </body>
 
 </html>
 
-    """, output.to_html(), str(np.var(a))
+    """, """Solution to question 1""",output.to_html(), """Solution to question 2""",str(np.var(a)), """<!DOCTYPE html>
+<html>
+	<head>
+		<title>Question 1</title>
+	</head>
+	<body>
+		<div class="foot"><h6>Copy right</h6> <h6>&copy;</h6> <h6>property of Durrell Gemuh</h6></div>
+	</body>
+</html>"""
 
     # @cherrypy.expose
     # def second(self):
